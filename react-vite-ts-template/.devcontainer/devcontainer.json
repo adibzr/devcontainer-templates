@@ -1,9 +1,15 @@
 {
   "name": "React Vite + TypeScript Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+  // "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "features": {},
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/usr/bin/zsh"
+      },
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
@@ -19,7 +25,15 @@
       ]
     }
   },
+  "forwardPorts": [
+    5173
+  ],
+  "portsAttributes": {
+    "5251": {
+      "label": "React app"
+    }
+  },
   "mounts": [],
-  "postCreateCommand": "npm create vite@latest my-app --template react-ts && cd my-app && npm install",
+  "postCreateCommand": "npm create vite@latest my-app --template react-ts && cd my-app && npm install && npm run dev",
   "remoteUser": "node"
 }
