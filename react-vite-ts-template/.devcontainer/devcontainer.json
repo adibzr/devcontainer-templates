@@ -1,0 +1,25 @@
+{
+  "name": "React Vite + TypeScript Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "dsznajder.es7-react-js-snippets",
+        "wallabyjs.console-ninja",
+        "vscode-icons-team.vscode-icons",
+        "formulahendry.console-ninja",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "github.copilot",
+        "github.copilot-chat",
+        "christian-kohler.path-intellisense"
+      ]
+    }
+  },
+  "mounts": [],
+  "postCreateCommand": "npm create vite@latest my-app --template react-ts && cd my-app && npm install",
+  "remoteUser": "node"
+}
